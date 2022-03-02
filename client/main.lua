@@ -197,7 +197,7 @@ RegisterNetEvent('police:client:SendToJail', function(time)
     TriggerServerEvent("police:server:SetHandcuffStatus", false)
     isHandcuffed = false
     isEscorted = false
-    ClearPedTasks(PlayerPedId())
+   -- ClearPedTasks(PlayerPedId())
     DetachEntity(PlayerPedId(), true, false)
     TriggerEvent("prison:client:Enter", time)
 end)
