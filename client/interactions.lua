@@ -262,8 +262,10 @@ end)
 
 RegisterNetEvent('police:client:CuffPlayerSoft', function()
     if not IsPedRagdoll(PlayerPedId()) then
-        local player, distance = QBCore.Functions.GetClosestPlayer()
-        if player ~= -1 and distance < 1.5 then
+        local player, distance  = QBCore.Functions.GetClosestPlayer()
+        local closestPed = GetPlayerPed(player)
+        local targetWarrant = Entity(closestPed).state.warrant
+        if player ~= -1 and distance < 1.5 and targetWarrant then
             local playerId = GetPlayerServerId(player)
             if not IsPedInAnyVehicle(GetPlayerPed(player)) and not IsPedInAnyVehicle(PlayerPedId()) then
                 TriggerServerEvent("police:server:CuffPlayer", playerId, true)
@@ -391,6 +393,7 @@ RegisterNetEvent('police:client:GetCuffed', function(playerId, isSoftcuff)
             GetCuffedAnimation(playerId)
             QBCore.Functions.Notify(Lang:t("info.cuff"), 'primary')
         else
+            
             cuffType = 49
             GetCuffedAnimation(playerId)
             QBCore.Functions.Notify(Lang:t("info.cuffed_walk"), 'primary')
