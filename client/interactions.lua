@@ -460,6 +460,7 @@ CreateThread(function()
 			DisableControlAction(0, 143, true) -- Disable melee
 			DisableControlAction(0, 75, true)  -- Disable exit vehicle
 			DisableControlAction(27, 75, true) -- Disable exit vehicle
+            DisableControlAction(0, 21, true) -- Running
             EnableControlAction(0, 249, true) -- Added for talking while cuffed
             EnableControlAction(0, 46, true)  -- Added for talking while cuffed
 
