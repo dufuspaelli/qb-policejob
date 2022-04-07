@@ -110,7 +110,7 @@ local Translations = {
         target_location = 'The location of %{firstname} %{lastname} is marked on your map',
         anklet_location = 'Anklet location',
         new_call = 'New Call',
-        officer_down = 'Officer %{lastname} | %{callsign} Down'
+        officer_down = 'Officer %{lastname} Down'
     },
     evidence = {
         red_hands = 'Red hands',
