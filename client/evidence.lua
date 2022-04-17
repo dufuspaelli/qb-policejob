@@ -213,7 +213,7 @@ CreateThread(function()
     end
 end)
 
-CreateThread(function() -- Gunpowder Status when shooting
+--[[ CreateThread(function() -- Gunpowder Status when shooting
     while true do
         Wait(1)
         local ped = PlayerPedId()
@@ -230,7 +230,7 @@ CreateThread(function() -- Gunpowder Status when shooting
             end
         end
     end
-end)
+end) ]]
 
 CreateThread(function()
     while true do
