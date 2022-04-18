@@ -793,6 +793,10 @@ CreateThread(function()
             minZ = v.z - 1,
             maxZ = v.z + 1,
         })
+        local coords = GetEntityCoords(PlayerPedId())
+        if Vdist(coords.x,coords.y,coords.z, v.x,v.y,v.z) < 10 then
+            DrawMarker(2, v.x,v.y,v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222, false, false, false, true, false, false, false)
+        end
     end
 
     local garageCombo = ComboZone:Create(garageZones, {name = "garageCombo", debugPoly = false})
@@ -800,9 +804,9 @@ CreateThread(function()
         if isPointInside then
             inGarage = true
             if onDuty and PlayerJob.name == 'police' then
-                if IsPedInAnyVehicle(PlayerPedId(), false) then
+               --[[  if IsPedInAnyVehicle(PlayerPedId(), false) then
                     exports['qb-core']:DrawText(Lang:t('info.store_veh'), 'left')
-                else
+                else ]]
                     local currentSelection = 0
 
                     for k, v in pairs(Config.Locations["vehicle"]) do
@@ -945,15 +949,24 @@ CreateThread(function ()
     Wait(1000)
     while true do
         local sleep = 1000
+        for k, v in pairs(Config.Locations["vehicle"]) do
+            local coords = GetEntityCoords(PlayerPedId())
+            if Vdist(coords.x,coords.y,coords.z, v.x,v.y,v.z) < 10 and PlayerJob.name == "police" then
+                sleep = 1
+                DrawMarker(2, v.x,v.y,v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222, false, false, false, true, false, false, false)
+            else 
+                --sleep = 1000
+            end
+        end
         if inGarage and PlayerJob.name == "police" then
             if onDuty then sleep = 5 end
             if IsPedInAnyVehicle(PlayerPedId(), false) then
-                if IsControlJustReleased(0, 38) then
+               --[[  if IsControlJustReleased(0, 38) then
                     QBCore.Functions.DeleteVehicle(GetVehiclePedIsIn(PlayerPedId()))
-                end
+                end ]]
             end
         else
-            sleep = 1000
+            --sleep = 1000
         end
         Wait(sleep)
     end

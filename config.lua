@@ -104,60 +104,69 @@ Config.SecurityCameras = {
 Config.AuthorizedVehicles = {
 	-- Grade 0
 	[0] = {
-		["police"] = "Police Car 1",
-		["police2"] = "Police Car 2",
-		["police3"] = "Police Car 3",
-		["police4"] = "Police Car 4",
-		["policeb"] = "Police Car 5",
-		["policet"] = "Police Car 6",
-		["sheriff"] = "Sheriff Car 1",
-		["sheriff2"] = "Sheriff Car 2",
+		["police"] = "Police Cruiser",
+		["police2"] = "Police Cruiser, Buffalo",
+		["police3"] = "Police Cruiser, Interceptor",
+		["police4"] = "Unmarked Cruiser",
+		["policeb"] = "Police Bike",
+		["policet"] = "Police Transporter",
+		["sheriff"] = "Sheriff Cruiser",
+		["sheriff2"] = "Sheriff SUV",
+        ["fbi"] = "FIB, Buffalo",
+        ["fbi2"] = "FIB, SUV"
 	},
 	-- Grade 1
 	[1] = {
-		["police"] = "Police Car 1",
-		["police2"] = "Police Car 2",
-		["police3"] = "Police Car 3",
-		["police4"] = "Police Car 4",
-		["policeb"] = "Police Car 5",
-		["policet"] = "Police Car 6",
-		["sheriff"] = "Sheriff Car 1",
-		["sheriff2"] = "Sheriff Car 2",
-
+		["police"] = "Police Cruiser",
+		["police2"] = "Police Cruiser, Buffalo",
+		["police3"] = "Police Cruiser, Interceptor",
+		["police4"] = "Unmarked Cruiser",
+		["policeb"] = "Police Bike",
+		["policet"] = "Police Transporter",
+		["sheriff"] = "Sheriff Cruiser",
+		["sheriff2"] = "Sheriff SUV",
+        ["fbi"] = "FIB, Buffalo",
+        ["fbi2"] = "FIB, SUV"
 	},
 	-- Grade 2
-	[2] = {
-		["police"] = "Police Car 1",
-		["police2"] = "Police Car 2",
-		["police3"] = "Police Car 3",
-		["police4"] = "Police Car 4",
-		["policeb"] = "Police Car 5",
-		["policet"] = "Police Car 6",
-		["sheriff"] = "Sheriff Car 1",
-		["sheriff2"] = "Sheriff Car 2",
+	[2] =  {
+		["police"] = "Police Cruiser",
+		["police2"] = "Police Cruiser, Buffalo",
+		["police3"] = "Police Cruiser, Interceptor",
+		["police4"] = "Unmarked Cruiser",
+		["policeb"] = "Police Bike",
+		["policet"] = "Police Transporter",
+		["sheriff"] = "Sheriff Cruiser",
+		["sheriff2"] = "Sheriff SUV",
+        ["fbi"] = "FIB, Buffalo",
+        ["fbi2"] = "FIB, SUV"
 	},
 	-- Grade 3
-	[3] = {
-		["police"] = "Police Car 1",
-		["police2"] = "Police Car 2",
-		["police3"] = "Police Car 3",
-		["police4"] = "Police Car 4",
-		["policeb"] = "Police Car 5",
-		["policet"] = "Police Car 6",
-		["sheriff"] = "Sheriff Car 1",
-		["sheriff2"] = "Sheriff Car 2",
+	[3] =  {
+		["police"] = "Police Cruiser",
+		["police2"] = "Police Cruiser, Buffalo",
+		["police3"] = "Police Cruiser, Interceptor",
+		["police4"] = "Unmarked Cruiser",
+		["policeb"] = "Police Bike",
+		["policet"] = "Police Transporter",
+		["sheriff"] = "Sheriff Cruiser",
+		["sheriff2"] = "Sheriff SUV",
+        ["fbi"] = "FIB, Buffalo",
+        ["fbi2"] = "FIB, SUV"
 	},
 	-- Grade 4
-	[4] = {
-		["police"] = "Police Car 1",
-		["police2"] = "Police Car 2",
-		["police3"] = "Police Car 3",
-		["police4"] = "Police Car 4",
-		["policeb"] = "Police Car 5",
-		["policet"] = "Police Car 6",
-		["sheriff"] = "Sheriff Car 1",
-		["sheriff2"] = "Sheriff Car 2",
-	}
+	[4] =  {
+		["police"] = "Police Cruiser",
+		["police2"] = "Police Cruiser, Buffalo",
+		["police3"] = "Police Cruiser, Interceptor",
+		["police4"] = "Unmarked Cruiser",
+		["policeb"] = "Police Bike",
+		["policet"] = "Police Transporter",
+		["sheriff"] = "Sheriff Cruiser",
+		["sheriff2"] = "Sheriff SUV",
+        ["fbi"] = "FIB, Buffalo",
+        ["fbi2"] = "FIB, SUV"
+	},
 }
 
 Config.WhitelistedVehicles = {}
