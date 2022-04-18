@@ -804,9 +804,9 @@ CreateThread(function()
         if isPointInside then
             inGarage = true
             if onDuty and PlayerJob.name == 'police' then
-               --[[  if IsPedInAnyVehicle(PlayerPedId(), false) then
-                    exports['qb-core']:DrawText(Lang:t('info.store_veh'), 'left')
-                else ]]
+                if IsPedInAnyVehicle(PlayerPedId(), false) then
+                    --exports['qb-core']:DrawText(Lang:t('info.store_veh'), 'left')
+                else
                     local currentSelection = 0
 
                     for k, v in pairs(Config.Locations["vehicle"]) do
@@ -951,7 +951,7 @@ CreateThread(function ()
         local sleep = 1000
         for k, v in pairs(Config.Locations["vehicle"]) do
             local coords = GetEntityCoords(PlayerPedId())
-            if Vdist(coords.x,coords.y,coords.z, v.x,v.y,v.z) < 10 and PlayerJob.name == "police" then
+            if Vdist(coords.x,coords.y,coords.z, v.x,v.y,v.z) < 10 and PlayerJob.name == "police" and IsPedOnFoot(PlayerPedId()) then
                 sleep = 1
                 DrawMarker(2, v.x,v.y,v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222, false, false, false, true, false, false, false)
             else 
