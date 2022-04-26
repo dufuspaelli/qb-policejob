@@ -259,22 +259,39 @@ RegisterNetEvent('police:client:KidnapPlayer', function()
         QBCore.Functions.Notify(Lang:t("error.none_nearby"), "error")
     end
 end)
+local justReleased = false
 
 RegisterNetEvent('police:client:CuffPlayerSoft', function()
-    if not IsPedRagdoll(PlayerPedId()) then
+ 
+    if not IsPedRagdoll(PlayerPedId() and not justReleased) then
         local player, distance  = QBCore.Functions.GetClosestPlayer()
         local closestPed = GetPlayerPed(player)
         local targetWarrant = Entity(closestPed).state.warrant
-        if player ~= -1 and distance < 1.5 and targetWarrant then
+        if player ~= -1 and distance < 1.5 and targetWarrant and not justReleased then
             local playerId = GetPlayerServerId(player)
-            if not IsPedInAnyVehicle(GetPlayerPed(player)) and not IsPedInAnyVehicle(PlayerPedId()) then
+            if not IsPedInAnyVehicle(closestPed) and not IsPedInAnyVehicle(PlayerPedId()) and targetWarrant and not justReleased  then
+                justReleased = true
                 TriggerServerEvent("police:server:CuffPlayer", playerId, true)
+                QBCore.Functions.Progressbar("handcuff", "Handcuffing suspect..", 2500, false, true, {
+                                    disableMovement = true, --
+                                    disableCarMovement = true,
+                                    disableMouse = false,
+                                    disableCombat = true,
+                                }, {}, {}, {}, function() 
+                                   -- Function Executed when the bar finish
+                                
+                                   Wait(10000)
+                                   justReleased = false
+                                end, function() -- Cancel
+                                    -- Function Executed when the player Cancel
+                                end)
+
                 HandCuffAnimation()
             else
                 QBCore.Functions.Notify(Lang:t("error.vehicle_cuff"), "error")
             end
         else
-            QBCore.Functions.Notify(Lang:t("error.none_nearby"), "error")
+            QBCore.Functions.Notify("You can only cuff wanted suspects", "error")
         end
     else
         Wait(2000)
